@@ -6,10 +6,17 @@ const cors       = require("cors");
 const mongoose   = require("mongoose");
 const app        = express();
 
+
+const userRoute = require("./routers/userRoute")
+
+
 app.use(morgan("dev"));
 app.use(cors()) ;
 app.use(bodyParser.urlencoded({extends:false})) ;
 app.use(bodyParser.json()) ;
+
+
+app.use("/api/users", userRoute)
 
 app.get("/",(req,res)=>{
     res.json({

@@ -16,7 +16,7 @@ const UserSchema = new Schema({
         type:String,
         required:true
     },
-    balane:number,
+    balance:number,
     income:number,
     expense:number,
     transactions:{
